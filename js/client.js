@@ -26,11 +26,11 @@ const name_user = prompt("Enter your name to join");
 socket.emit('new-user-joined', name_user);
 
 socket.on('user-joined', name => {
-    append(`${name} joined the chat`, 'left')
+    append(`${name} joined the chat`, 'center')
 })
 socket.on('receive', data => {
     append(`${data.name}:${data.message}`, 'left')
 })
 socket.on('leave', name => {
-    append(`${name} left the chat`, `left`)
+    append(`${name} left the chat`, `center`)
 })
